@@ -1,0 +1,44 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <div id='name'>
+    </div>
+    <div id='address'>
+    </div>
+    <div id='phone'>
+    </div>
+    <div id='hours'>
+    </div>
+    <div id='note'>
+    </div>
+</body>
+
+
+
+
+<script>
+    let data;
+    let params = new URLSearchParams(document.location.search.slice(1));
+    let name = params.get("name");
+
+    fetch('new-moon.json')
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function (myMoon) {
+
+            data = JSON.parse(text)
+
+            document.getElementById('name').innerHTML = data.name
+            document.getElementById('address').innerhtml = data.address
+            document.getElementById('phone').innerhtml = data.phone
+            document.getElementById('hours').innerhtml = data.hours
+            document.getElementById('note').innerhtml = data.note
+        });
+</script>
+
+</html>
